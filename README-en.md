@@ -9,7 +9,7 @@
 This repository uses GitHub Actions to automate daily check-ins and automated question answering tasks.
 
 English Version |
-[中文版本](./README.md)
+[中文版本](./README.md).
 </div>
 
 ## Features

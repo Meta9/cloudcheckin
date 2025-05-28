@@ -13,7 +13,7 @@ if not cookies:
     sys.exit(1)
 
 # Split multiple cookies by & to form a list
-cookie_list = cookies.split('&')
+cookie_list = cookies.split('@')
 
 # Request headers
 headers = {

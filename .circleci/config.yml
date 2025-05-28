@@ -15,10 +15,6 @@ jobs:
           name: Run Nodeseek signin
           command: |
             python -m nodeseek.nodeseek
-          environment:
-            NODESEEK_COOKIE: ${NODESEEK_COOKIE}
-            TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
-            TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID}
 
   v2ex:
     docker:
@@ -34,10 +30,6 @@ jobs:
           name: Run V2EX signin
           command: |
             python -m v2ex.v2ex
-          environment:
-            V2EX_COOKIE: ${V2EX_COOKIE}
-            TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
-            TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID}
 
   onepoint3acres:
     docker:
@@ -53,11 +45,6 @@ jobs:
           name: Run 1point3acres signin
           command: |
             python -m onepoint3acres.onepoint3acres
-          environment:
-            ONEPOINT3ACRES_COOKIE: ${ONEPOINT3ACRES_COOKIE}
-            TWOCAPTCHA_APIKEY: ${TWOCAPTCHA_APIKEY}
-            TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
-            TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID}
 
 workflows:
   version: 2
@@ -71,8 +58,21 @@ workflows:
                 - main
     jobs:
       - nodeseek
+          secrets:
+            - NODESEEK_COOKIE
+            - TELEGRAM_TOKEN
+            - TELEGRAM_CHAT_ID
       - v2ex
+          secrets:
+            - V2EX_COOKIE
+            - TELEGRAM_TOKEN
+            - TELEGRAM_CHAT_ID
       - onepoint3acres
+          secrets:
+            - ONEPOINT3ACRES_COOKIE
+            - TWOCAPTCHA_APIKEY
+            - TELEGRAM_TOKEN
+            - TELEGRAM_CHAT_ID
   
   # Allow manual triggers
   manual_trigger:

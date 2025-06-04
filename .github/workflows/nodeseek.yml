@@ -2,7 +2,7 @@ name: Run Nodeseek Actions
 
 on:
   # schedule:
-  #   - cron: '0 2 * * *' # every day 1 a.m. (UTC time 01:00, Beijing time 09:00)
+  #   - cron: '0 3 * * *' # every day 1 a.m. (UTC time 01:00, Beijing time 09:00)
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
